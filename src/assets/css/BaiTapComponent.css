@@ -1,0 +1,38 @@
+.banner .container {
+  background-color: #f8f9fa;
+  padding: 100px !important;
+}
+.banner-title {
+  font-weight: bold;
+  font-size: 48px;
+}
+.items {
+    margin-top: 70px;
+}
+.items .container {
+    padding: 0px;
+}
+.items .items-card {
+    background-color: #f8f9fa;
+    border: none;
+    width: 30%;
+    margin-bottom: 70px;
+    padding: 20px;
+    padding-top: 0px;
+}
+.items .icon {
+    height: 64px;
+    width: 64px;
+    margin: 0 auto;
+    margin-top: -32px;
+    margin-bottom: 32px;
+    border-radius: 5px;
+}
+.items .bi {
+    font-size: 32px;
+    color: white;
+    line-height: 64px;
+}
+.footer p {
+    
+}
