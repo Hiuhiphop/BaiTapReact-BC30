@@ -72,18 +72,14 @@ export default class QuanLySinhVien extends Component {
     let name = arrSVUpdate.filter((SV) => {
       return SV.TenSV.includes(value);
     });
-
-    if (value) {
+    if (value !== "") {
       this.setState({
         findSV: name,
       });
     } else {
-      this.setState(
-        {
-          findSV: this.state.arrSV,
-        },
-        () => console.log(this.state.findSV)
-      );
+      this.setState({
+        findSV: this.state.arrSV,
+      });
     }
   };
 

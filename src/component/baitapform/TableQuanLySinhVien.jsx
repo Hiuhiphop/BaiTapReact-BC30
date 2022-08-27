@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 
 export default class TableQuanLySinhVien extends Component {
+  state = {
+    SV: [...this.props.arrSV]
+  }
+  componentWillReceiveProps(newProps) {
+    this.setState({
+      SV: newProps.findSV,
+    });
+  }
   render() {
     return (
       <div>
@@ -24,7 +32,7 @@ export default class TableQuanLySinhVien extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.findSV.map((SV, index) => {
+            {this.state.SV.map((SV, index) => {
               return (
                 <tr key={index}>
                   <td>{SV.MaSV}</td>

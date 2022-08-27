@@ -17,12 +17,33 @@ export default class FormQuanLySinhVien extends Component {
   };
   handleChange = (e) => {
     let { id, value, placeholder } = e.target;
+    let dataType = e.target.getAttribute("data-type");
     let newSV = { ...this.state.SV };
     newSV[id] = value;
     let newErrors = { ...this.state.errors };
     let errorMess = "";
     if (value.trim() === "") {
       errorMess = placeholder + " không được để trống";
+    } else {
+      if (dataType === "name") {
+        let regex =
+          /[^a-z0-9A-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễếệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]/u;
+        if (!regex.test(value)) {
+          errorMess = placeholder + " không hợp lệ";
+        }
+      }
+      if (dataType === "number") {
+        let regex = /^\d+$/;
+        if (!regex.test(value)) {
+          errorMess = placeholder + " phải là số";
+        }
+      }
+      if (dataType === "email") {
+        let regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        if (!regex.test(value)) {
+          errorMess = placeholder + " không hợp lệ";
+        }
+      }
     }
     newErrors[id] = errorMess;
     this.setState({
@@ -33,7 +54,25 @@ export default class FormQuanLySinhVien extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    let { SV, erros } = this.state;
+    let valid = true;
+    let { SV, errors } = this.state;
+    for (let key in errors) {
+      if (errors[key] !== "") {
+        valid = false;
+        break;
+      }
+    }
+    for (let key in SV) {
+      if (SV[key] === "") {
+        valid = false;
+        break;
+      }
+    }
+
+    if (!valid) {
+      alert("Thêm không thành công");
+      return;
+    }
     this.props.createSV(SV);
   };
 
@@ -51,6 +90,7 @@ export default class FormQuanLySinhVien extends Component {
         <div className="body-form d-flex flex-wrap justify-content-between">
           <div className="form-items">
             <input
+              data-type="number"
               value={MaSV}
               type="text"
               placeholder="Mã sinh viên"
@@ -62,6 +102,7 @@ export default class FormQuanLySinhVien extends Component {
           </div>
           <div className="form-items">
             <input
+              data-type="name"
               value={TenSV}
               type="text"
               placeholder="Tên sinh viên"
@@ -73,6 +114,7 @@ export default class FormQuanLySinhVien extends Component {
           </div>
           <div className="form-items">
             <input
+              data-type="number"
               value={Sdt}
               type="text"
               placeholder="Số điện thoại"
@@ -84,8 +126,9 @@ export default class FormQuanLySinhVien extends Component {
           </div>
           <div className="form-items">
             <input
+              data-type="email"
               value={Email}
-              type="email"
+              type="text"
               placeholder="Email"
               id="Email"
               name="Email"
