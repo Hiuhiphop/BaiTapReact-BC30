@@ -7,24 +7,7 @@ import TableQuanLySinhVien from "./TableQuanLySinhVien";
 export default class QuanLySinhVien extends Component {
   state = {
     arrSV: [
-      {
-        MaSV: "0302",
-        TenSV: "le thanh tu",
-        Sdt: "0926999351",
-        Email: "yonder321405@gmail.com",
-      },
-      {
-        MaSV: "0301",
-        TenSV: "le thanh hieu",
-        Sdt: "0926999351",
-        Email: "yonder321405@gmail.com",
-      },
-      {
-        MaSV: "0300",
-        TenSV: "le thi kim loan",
-        Sdt: "0926999351",
-        Email: "yonder321405@gmail.com",
-      },
+      
     ],
     updateSV: {
       MaSV: "",
