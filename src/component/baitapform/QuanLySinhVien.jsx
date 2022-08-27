@@ -9,7 +9,7 @@ export default class QuanLySinhVien extends Component {
     arrSV: [
       {
         MaSV: "0302",
-        TenSV: "le thanh hieu",
+        TenSV: "le thanh tu",
         Sdt: "0926999351",
         Email: "yonder321405@gmail.com",
       },
@@ -21,7 +21,7 @@ export default class QuanLySinhVien extends Component {
       },
       {
         MaSV: "0300",
-        TenSV: "le thanh hieu",
+        TenSV: "le thi kim loan",
         Sdt: "0926999351",
         Email: "yonder321405@gmail.com",
       },

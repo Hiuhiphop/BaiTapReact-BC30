@@ -24,7 +24,7 @@ export default class TableQuanLySinhVien extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.arrSV.map((SV, index) => {
+            {this.props.findSV.map((SV, index) => {
               return (
                 <tr key={index}>
                   <td>{SV.MaSV}</td>
