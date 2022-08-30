@@ -27,18 +27,48 @@ function App() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-                <NavLink className="nav-link active" aria-current="page" to="/BaiTapThuKinh">
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/BaiTapComponent"
+                >
+                  Bài tập Component
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/BaiTapProps"
+                >
+                  Bài tập props
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/BaiTapThuKinh"
+                >
                   Bài tập thử kính
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link active" aria-current="page" to="/BaiTapForm">
+                <NavLink
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/BaiTapForm"
+                >
                   Bài tập from
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link active" aria-current="page" to="/BaiTapVePhim">
+                <NavLink
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/BaiTapVePhim"
+                >
                   Bài tập vé phim
                 </NavLink>
               </li>

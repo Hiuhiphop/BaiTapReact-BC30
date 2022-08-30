@@ -8,5 +8,8 @@
 >src/component/baitapthukinh
 * Bài tập props: ✔
 >src/component/baitapprops
-* Bài tập props: No search feature
+* Bài tập form: ✔
 >src/component/baitapform
+~~Search Feature~~
+* Bài tập đặt vé: ✔
+>src/component/baitapvephim
